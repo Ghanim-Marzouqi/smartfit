@@ -1,0 +1,1 @@
+This directory to include Arabic and English translations.

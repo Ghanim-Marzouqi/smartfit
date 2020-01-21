@@ -20,14 +20,17 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigatePage() {
-    Navigator.of(context).pushReplacementNamed('INTRO_PAGE');
+    Navigator.of(context).pushReplacementNamed('DASHBOARD_PAGE');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      body: Center(
+      body: Container(
+        color: kAccentColor,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: Hero(
           tag: 'hero',
           child: CircleAvatar(

@@ -1,0 +1,1 @@
+This directory to include assets other than images, fonts, etc.

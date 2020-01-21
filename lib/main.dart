@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:smartfit/utilities/constants.dart';
+import 'package:smartfit/services/timer/timer_service.dart';
+import 'package:smartfit/services/timer/timer_service_provider.dart';
 
 // pages
 import 'package:smartfit/pages/splash_page.dart';
-import 'package:smartfit/pages/intro_page.dart';
 import 'package:smartfit/pages/dashboard_page.dart';
 import 'package:smartfit/pages/training_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  final timerService = TimerService();
+  runApp(
+    TimerServiceProvider(
+      service: timerService,
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -41,7 +50,6 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: <String, WidgetBuilder>{
-        'INTRO_PAGE': (BuildContext context) => IntroPage(),
         'DASHBOARD_PAGE': (BuildContext context) => DashboardPage(),
         'TRAINING_PAGE': (BuildContext context) => TrainingPage(),
       },
