@@ -49,7 +49,12 @@ class _TrainingPageState extends State<TrainingPage> {
         body: TabBarView(
           children: [
             Container(
-              color: kBackgroundColor,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/treadmill_bg.jpeg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: AnimatedBuilder(
                   animation: timerService, // listen to ChangeNotifier
@@ -58,10 +63,23 @@ class _TrainingPageState extends State<TrainingPage> {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 75.0,
+                          child: Image.asset('images/icon.png'),
+                        ),
                         Text(
                           timerService.currentDuration.toString().split('.')[0],
                           style: TextStyle(
-                            fontSize: 50.0,
+                            fontSize: 60.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "Cal. Loss: ${timerService.calLoss}",
+                          style: TextStyle(
+                            fontSize: 30.0,
                             color: Colors.white,
                           ),
                         ),
@@ -75,7 +93,7 @@ class _TrainingPageState extends State<TrainingPage> {
                         RaisedButton(
                           onPressed: timerService.reset,
                           child: Text('Reset'),
-                        )
+                        ),
                       ],
                     );
                   },
@@ -83,24 +101,34 @@ class _TrainingPageState extends State<TrainingPage> {
               ),
             ),
             Container(
-              color: kBackgroundColor,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/cross_trainer_bg.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: Text(
                   "Cross Trainer",
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 50.0,
                     color: Colors.white,
                   ),
                 ),
               ),
             ),
             Container(
-              color: kBackgroundColor,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/cycling_machine_bg.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: Text(
                   "Cycling Machine",
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 50.0,
                     color: Colors.white,
                   ),
                 ),

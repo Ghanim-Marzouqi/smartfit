@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:smartfit/services/timer/timer_service_provider.dart';
@@ -8,6 +9,7 @@ class TimerService extends ChangeNotifier {
   Timer _timer;
 
   Duration get currentDuration => _currentDuration;
+  double get calLoss => roundDouble(_currentDuration.inSeconds * 0.08333, 2);
   Duration _currentDuration = Duration.zero;
 
   bool get isRunning => _timer != null;
@@ -47,6 +49,11 @@ class TimerService extends ChangeNotifier {
     _currentDuration = Duration.zero;
 
     notifyListeners();
+  }
+
+  double roundDouble(double value, int places) {
+    double mod = pow(10.0, places);
+    return ((value * mod).round().toDouble() / mod);
   }
 
   static TimerService of(BuildContext context) {

@@ -7,6 +7,7 @@ import 'package:smartfit/services/timer/timer_service_provider.dart';
 import 'package:smartfit/pages/splash_page.dart';
 import 'package:smartfit/pages/dashboard_page.dart';
 import 'package:smartfit/pages/training_page.dart';
+import 'package:smartfit/pages/result_details_page.dart';
 
 void main() {
   final timerService = TimerService();
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         'DASHBOARD_PAGE': (BuildContext context) => DashboardPage(),
         'TRAINING_PAGE': (BuildContext context) => TrainingPage(),
+        'RESULT_DETAILS': (BuildContext context) => ResultDetailsPage(),
       },
     );
   }
