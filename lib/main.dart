@@ -42,8 +42,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         secondaryHeaderColor: kPrimaryColor,
         accentColor: kPrimaryColor,
-        unselectedWidgetColor: kPrimaryColor,
-        toggleableActiveColor: kPrimaryColor,
+        unselectedWidgetColor: Colors.white,
         textTheme: TextTheme(
           body1: TextStyle(
             color: Colors.black,

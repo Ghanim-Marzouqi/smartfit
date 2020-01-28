@@ -10,7 +10,7 @@ class TrainingPage extends StatefulWidget {
 class _TrainingPageState extends State<TrainingPage> {
   @override
   Widget build(BuildContext context) {
-    var timerService = TimerService.of(context);
+    TimerService timerService = TimerService.of(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -76,23 +76,61 @@ class _TrainingPageState extends State<TrainingPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          "Cal. Loss: ${timerService.calLoss}",
-                          style: TextStyle(
-                            fontSize: 30.0,
-                            color: Colors.white,
+                        SizedBox(height: 20.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: !timerService.isRunning
+                                ? timerService.start
+                                : () {
+                                    timerService.stop();
+                                    Navigator.of(context)
+                                        .pushNamed('RESULT_DETAILS');
+                                  },
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              !timerService.isRunning ? 'Start' : 'Stop',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
                         ),
-                        RaisedButton(
-                          onPressed: !timerService.isRunning
-                              ? timerService.start
-                              : timerService.stop,
-                          child:
-                              Text(!timerService.isRunning ? 'Start' : 'Stop'),
-                        ),
-                        RaisedButton(
-                          onPressed: timerService.reset,
-                          child: Text('Reset'),
+                        SizedBox(height: 5.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: timerService.reset,
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              'Reset',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     );

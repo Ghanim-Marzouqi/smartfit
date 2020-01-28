@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   introduction_screen: ^1.0.7
   bottom_navy_bar: ^5.3.2
+  intl: ^0.16.1
+  flutter_emoji: ^2.2.1+1
 
 dev_dependencies:
   flutter_test:

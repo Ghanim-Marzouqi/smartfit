@@ -15,7 +15,7 @@ class ResultsPage extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed('RESULT_DETAILS'),
               child: Card(
-                color: kAccentColor,
+                color: kCardColor,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -23,8 +23,23 @@ class ResultsPage extends StatelessWidget {
                       leading: Image(
                         image: AssetImage('images/treadmill.png'),
                       ),
-                      title: Text('Treadmill'),
-                      subtitle: Text('See Your Results'),
+                      title: Text(
+                        'Treadmill',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Tap To See Your Results',
+                        style: TextStyle(
+                          color: kAccentColor,
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -33,7 +48,7 @@ class ResultsPage extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed('RESULT_DETAILS'),
               child: Card(
-                color: kAccentColor,
+                color: kCardColor,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -41,8 +56,23 @@ class ResultsPage extends StatelessWidget {
                       leading: Image(
                         image: AssetImage('images/cross_trainer.png'),
                       ),
-                      title: Text('Cross Trainer'),
-                      subtitle: Text('See Your Resuls'),
+                      title: Text(
+                        'Cross Trainer',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Tap To See Your Results',
+                        style: TextStyle(
+                          color: kAccentColor,
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -51,7 +81,7 @@ class ResultsPage extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed('RESULT_DETAILS'),
               child: Card(
-                color: kAccentColor,
+                color: kCardColor,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -59,8 +89,23 @@ class ResultsPage extends StatelessWidget {
                       leading: Image(
                         image: AssetImage('images/cycling.png'),
                       ),
-                      title: Text('Cycling Machine'),
-                      subtitle: Text('See Your Resuls'),
+                      title: Text(
+                        'Cycling Machine',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Tap To See Your Results',
+                        style: TextStyle(
+                          color: kAccentColor,
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ),
                   ],
                 ),
