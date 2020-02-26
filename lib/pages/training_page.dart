@@ -146,12 +146,85 @@ class _TrainingPageState extends State<TrainingPage> {
                 ),
               ),
               child: Center(
-                child: Text(
-                  "Cross Trainer",
-                  style: TextStyle(
-                    fontSize: 50.0,
-                    color: Colors.white,
-                  ),
+                child: AnimatedBuilder(
+                  animation: timerService, // listen to ChangeNotifier
+                  builder: (context, child) {
+                    // this part is rebuilt whenever notifyListeners() is called
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 75.0,
+                          child: Image.asset('images/icon.png'),
+                        ),
+                        Text(
+                          timerService.currentDuration.toString().split('.')[0],
+                          style: TextStyle(
+                            fontSize: 60.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 20.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: !timerService.isRunning
+                                ? timerService.start
+                                : () {
+                              timerService.stop();
+                              Navigator.of(context)
+                                  .pushNamed('RESULT_DETAILS');
+                            },
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              !timerService.isRunning ? 'Start' : 'Stop',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 5.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: timerService.reset,
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              'Reset',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ),
@@ -163,12 +236,85 @@ class _TrainingPageState extends State<TrainingPage> {
                 ),
               ),
               child: Center(
-                child: Text(
-                  "Cycling Machine",
-                  style: TextStyle(
-                    fontSize: 50.0,
-                    color: Colors.white,
-                  ),
+                child: AnimatedBuilder(
+                  animation: timerService, // listen to ChangeNotifier
+                  builder: (context, child) {
+                    // this part is rebuilt whenever notifyListeners() is called
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 75.0,
+                          child: Image.asset('images/icon.png'),
+                        ),
+                        Text(
+                          timerService.currentDuration.toString().split('.')[0],
+                          style: TextStyle(
+                            fontSize: 60.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 20.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: !timerService.isRunning
+                                ? timerService.start
+                                : () {
+                              timerService.stop();
+                              Navigator.of(context)
+                                  .pushNamed('RESULT_DETAILS');
+                            },
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              !timerService.isRunning ? 'Start' : 'Stop',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 5.0),
+                        ButtonTheme(
+                          minWidth: 150.0,
+                          height: 50.0,
+                          child: RaisedButton(
+                            onPressed: timerService.reset,
+                            textColor: Colors.white,
+                            color: Colors.grey.shade900,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40.0,
+                              vertical: 10.0,
+                            ),
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: BorderSide(color: Colors.white),
+                            ),
+                            child: Text(
+                              'Reset',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ),

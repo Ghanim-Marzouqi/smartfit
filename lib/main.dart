@@ -8,6 +8,7 @@ import 'package:smartfit/pages/splash_page.dart';
 import 'package:smartfit/pages/dashboard_page.dart';
 import 'package:smartfit/pages/training_page.dart';
 import 'package:smartfit/pages/result_details_page.dart';
+import 'package:smartfit/pages/profile/personal_info_page.dart';
 
 void main() {
   final timerService = TimerService();
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         'DASHBOARD_PAGE': (BuildContext context) => DashboardPage(),
         'TRAINING_PAGE': (BuildContext context) => TrainingPage(),
         'RESULT_DETAILS': (BuildContext context) => ResultDetailsPage(),
+        'PERSONAL_INFO': (BuildContext context) => PersonalInfoPage(),
       },
     );
   }

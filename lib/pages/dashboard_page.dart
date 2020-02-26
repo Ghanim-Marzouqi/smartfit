@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:smartfit/pages/profile_page.dart';
+import 'package:smartfit/pages/bmi_calculation_page.dart';
+import 'package:smartfit/pages/profile/profile_page.dart';
 import 'package:smartfit/pages/results_page.dart';
 import 'package:smartfit/pages/statistics_page.dart';
 import 'package:smartfit/pages/training_page.dart';
 import 'package:smartfit/utilities/user_basic_data.dart';
 import 'package:smartfit/widgets/bottom_navigation_menu.dart';
-import 'package:smartfit/widgets/ibm_calculate_dialog.dart';
+import 'package:smartfit/widgets/bmi_calculate_dialog.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -18,7 +19,6 @@ class _DashboardPageState extends State<DashboardPage> {
   int _currentIndex = 0;
   final _pageController = PageController();
   String _pageTitle = '';
-  UserBasicData userData;
 
   @override
   void initState() {
@@ -27,18 +27,6 @@ class _DashboardPageState extends State<DashboardPage> {
     _pageTitle = 'Train';
 
     Future.delayed(Duration.zero, () => _pageController.jumpToPage(0));
-    Future.delayed(Duration(seconds: 3), () async {
-      userData = await UserBasicData.getUserBasicData();
-      if (userData == null) {
-        print('IBM Dialog');
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return IBMCalculateDialog();
-          },
-        );
-      }
-    });
   }
 
   // method to render chosen page from drawer
